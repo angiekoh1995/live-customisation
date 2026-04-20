@@ -462,13 +462,13 @@ function ConsentRow() {
 function GiftIllustration({ type, name = '' }) {
   // ── IMAGE PATHS ──────────────────────────────────────────────
   // Save your images into an `images/` folder in the same repo:
-  //   images/tumbler.jpg   ← Coffee Tumbler
-  //   images/notebook.jpg  ← Notebook
-  //   images/card.jpg      ← NETS Prepaid Card
+  //   images/tumbler.webp  ← Coffee Tumbler
+  //   images/notebook.webp ← Notebook
+  //   images/card.webp     ← NETS Prepaid Card
   const imgs = {
-    mug:      'images/tumbler.png',
-    notebook: 'images/notebook.png',
-    card:     'images/card.png',
+    mug:      '/images/tumbler.webp',
+    notebook: '/images/notebook.webp',
+    card:     '/images/card.webp',
   };
   // Show decoration label only for text personalisation (not sticker IDs)
   const showLabel = name && !name.startsWith('sticker-');
