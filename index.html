@@ -681,13 +681,14 @@ function GiftCard({ gift, selected, onSelect, showInventory }) {
       onClick={() => !out && onSelect(gift.id)}
       disabled={out}
       style={{
-        width: '100%', textAlign: 'left', padding: 0, border: 'none', cursor: out ? 'not-allowed' : 'pointer',
-        background: 'var(--surface)', borderRadius: 18, overflow: 'hidden',
-        position: 'relative',
+        width: '100%', textAlign: 'left', padding: 0, cursor: out ? 'not-allowed' : 'pointer',
+        background: 'var(--surface)', borderRadius: 18,
+        border: selected ? '2px solid var(--accent)' : '1px solid var(--line)',
+        transition: 'border-color .15s',
         marginBottom: 12, opacity: out ? 0.4 : 1, display: 'block',
       }}
     >
-      <div style={{ display: 'flex', alignItems: 'stretch' }}>
+      <div style={{ display: 'flex', alignItems: 'stretch', overflow: 'hidden', borderRadius: 16 }}>
         <div style={{ width: 120, height: 100, flexShrink: 0, background: 'var(--surface-2)' }}>
           <GiftIllustration type={gift.id} />
         </div>
@@ -712,12 +713,6 @@ function GiftCard({ gift, selected, onSelect, showInventory }) {
           )}
         </div>
       </div>
-      {/* Border overlay — renders above image */}
-      <div style={{
-        position: 'absolute', inset: 0, borderRadius: 18, pointerEvents: 'none',
-        boxShadow: selected ? 'inset 0 0 0 2px var(--accent)' : 'inset 0 0 0 1px var(--line)',
-        transition: 'box-shadow .15s',
-      }} />
     </button>
   );
 }
