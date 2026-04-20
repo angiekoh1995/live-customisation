@@ -683,15 +683,14 @@ function GiftCard({ gift, selected, onSelect, showInventory }) {
       style={{
         width: '100%', textAlign: 'left', padding: 0, border: 'none', cursor: out ? 'not-allowed' : 'pointer',
         background: 'var(--surface)', borderRadius: 18, overflow: 'hidden',
-        outline: selected ? '2px solid var(--accent)' : '1px solid var(--line)',
-        outlineOffset: selected ? -2 : -1,
-        transition: 'outline .15s',
+        boxShadow: selected ? 'inset 0 0 0 2px var(--accent)' : 'inset 0 0 0 1px var(--line)',
+        transition: 'box-shadow .15s',
         marginBottom: 12, opacity: out ? 0.4 : 1, display: 'block',
       }}
     >
       <div style={{ display: 'flex', alignItems: 'stretch' }}>
         <div style={{ width: 120, height: 100, flexShrink: 0, background: 'var(--surface-2)' }}>
-          <GiftIllustration type={gift.id} compact />
+          <GiftIllustration type={gift.id} />
         </div>
         <div style={{ flex: 1, padding: '14px 16px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
           <div>
@@ -741,9 +740,8 @@ function StickerPicker({ stickers, value, onChange }) {
         return (
           <button key={s.id} onClick={() => onChange(s.id)} style={{
             flex: 1, padding: 0, border: 'none', background: 'none', cursor: 'pointer',
-            outline: selected ? '2px solid var(--accent)' : '1px solid var(--line)',
-            outlineOffset: selected ? -2 : -1,
-            borderRadius: 12, overflow: 'hidden', transition: 'outline .15s',
+            boxShadow: selected ? 'inset 0 0 0 2px var(--accent)' : 'inset 0 0 0 1px var(--line)',
+            borderRadius: 12, overflow: 'hidden', transition: 'box-shadow .15s',
           }}>
             <div style={{
               aspectRatio: '1', background: 'var(--surface-2)',
