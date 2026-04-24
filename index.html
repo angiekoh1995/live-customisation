@@ -492,8 +492,8 @@ function GiftIllustration({ type, name = '', compact = false, stickerImg = null 
   // NETS card: name left-aligned under "CLUB MEMBER", starting at the 'R'
   const barOverlay = showLabel && type !== 'mug' && (
     <div style={{
-      position: 'absolute', top: '58%', left: 0,
-      width: '41%', textAlign: 'right',
+      position: 'absolute', top: '64%', left: 0,
+      width: '36%', textAlign: 'right',
       fontFamily: 'Arial, sans-serif', fontSize: 11, fontWeight: 400,
       color: '#e1d7b1', letterSpacing: 1,
       textTransform: 'uppercase', pointerEvents: 'none',
@@ -505,7 +505,7 @@ function GiftIllustration({ type, name = '', compact = false, stickerImg = null 
   // Notebook: sticker overlay — lower-left area per reference image
   const stickerOverlay = stickerImg && type === 'notebook' && (
     <div style={{
-      position: 'absolute', top: '66%', left: '40%',
+      position: 'absolute', top: '66%', left: '44%',
       transform: 'translate(-50%, -50%)',
       width: '18%', pointerEvents: 'none',
     }}>
@@ -700,7 +700,7 @@ function GiftCard({ gift, selected, onSelect, showInventory }) {
       }}
     >
       <div style={{ display: 'flex', alignItems: 'stretch', overflow: 'hidden', borderRadius: 16 }}>
-        <div style={{ width: 120, height: 100, flexShrink: 0, background: 'var(--surface-2)', padding: gift.id === 'card' ? 14 : 0, boxSizing: 'border-box' }}>
+        <div style={{ width: 120, height: 100, flexShrink: 0, background: gift.id === 'card' ? '#fff' : 'var(--surface-2)', padding: gift.id === 'card' ? 14 : 0, boxSizing: 'border-box' }}>
           <GiftIllustration type={gift.id} />
         </div>
         <div style={{ flex: 1, padding: '14px 16px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
@@ -792,7 +792,7 @@ function PersonaliseScreen({ gift, personalisation, setPersonalisation, onNext, 
       {/* Scrollable content */}
       <div style={{ flex: 1, overflowY: 'auto', padding: mobile ? `24px ${px}px 16px` : `40px ${px}px 16px` }}>
         <StepHeader step={3} total={4} onBack={onBack} title="Make it yours."
-          subtitle={isSticker ? "Pick a letter. We sticker on the spot." : "Up to 8 characters. We decorate on the spot."}/>
+          subtitle={isSticker ? "Pick a letter. We decorate on the spot." : "Up to 8 characters. We decorate on the spot."}/>
         <div style={{
           background: 'var(--surface-2)', borderRadius: 18, aspectRatio: '5/4',
           marginBottom: 22, position: 'relative', overflow: 'hidden',
